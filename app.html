@@ -9,6 +9,8 @@
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="سجل المركز">
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="icon-192.png">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Crect width=%27100%27 height=%27100%27 rx=%2722%27 fill=%27%23876280%27/%3E%3Ctext x=%2750%27 y=%2768%27 font-size=%2756%27 text-anchor=%27middle%27%3E%F0%9F%93%9A%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -2296,6 +2298,7 @@ document.getElementById('signOutBtn').onclick=async()=>{
 const hs=(location.hash||'').slice(1);if(hs!=='cover'&&VIEWS.some(v=>v.id===hs)){current=hs;coverOpen=false;}
 (function(){let hint='';try{hint=localStorage.getItem('lrc-gd-email')||'';}catch(e){}if(hint)document.getElementById('gateBtnTxt').textContent='متابعة باسم '+hint;})();
 gdStatus('load');render();
+if('serviceWorker' in navigator&&location.protocol==='https:'){navigator.serviceWorker.register('sw.js').catch(()=>{});}
 })();
 </script>
 </body>
